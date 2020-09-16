@@ -1,0 +1,6 @@
+<view class='container'>
+<cu-custom bgColor="bg-gradual-orange"  isCustom="{{true}}">
+  <view slot="content">关注商品</view>
+</cu-custom>
+<goods-box type='{{2}}'goods-list='{{goodsList}}' bind:dataFun="getData"></goods-box>
+</view>

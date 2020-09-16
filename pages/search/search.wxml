@@ -1,0 +1,14 @@
+<cu-custom bgColor="bg-gradual-orange" isBack="{{true}}">
+  <view slot="backText">返回</view>
+  <view slot="content">搜索</view>
+</cu-custom>
+<view class="cu-bar search bg-white">
+    <view class="search-form round">
+      <text class="icon-search"></text>
+      <input type="text" placeholder="输入关键词、商品首字母检索" bindinput="setKeyword" confirm-type="search"></input>
+    </view>
+    <view class="action">
+      <button class="cu-btn bg-gradual-orange shadow-blur round" bindtap="getSearchData">搜索</button>
+    </view>
+  </view>
+  <goods-box type="{{0}}" goods-list='{{goodsList}}'></goods-box>

@@ -1,0 +1,71 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/nearby/nearby",
+    "pages/person/person",
+    "pages/indexes/indexes",
+    "pages/shopIndex/shopIndex",
+    "pages/userIndex/userIndex",
+    "pages/users/protocol/protocol",
+    "pages/users/privacy/privacy",
+    "pages/phone/phone",
+    "pages/goods/goodsDetail",
+    "pages/setting/setting",
+    "pages/users/address/addressList",
+    "pages/users/address/edit/edit",
+    "pages/users/appeal/appeal",
+    "pages/users/account/userAccount",
+    "pages/cropper/cropper-example",
+    "pages/navIndex/navIndex",
+    "pages/addGoods/addGoods",
+    "pages/follow/followUser",
+    "pages/follow/followGoods",
+    "pages/search/search",
+    "pages/editGoods/editGoods"
+  ],
+  "requiredBackgroundModes": [
+    "audio",
+    "location"
+  ],
+  "window": {
+    "navigationStyle": "custom"
+  },
+  "usingComponents": {
+    "cu-custom": "/colorui/components/cu-custom"
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于小程序位置接口的效果展示"
+    }
+  },
+  "tabBar": {
+    "color": "#999",
+    "selectedColor": "#EBB41B",
+    "backgroundColor": "#fff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "image/index_normal.png",
+        "selectedIconPath": "image/index_pressed.png"
+      },
+      {
+        "pagePath": "pages/nearby/nearby",
+        "text": "附近",
+        "iconPath": "image/nearby_normal.png",
+        "selectedIconPath": "image/nearby_pressed.png"
+      },
+      {
+        "pagePath": "pages/person/person",
+        "text": "我的",
+        "iconPath": "image/preson_normal.png",
+        "selectedIconPath": "image/preson_pressed.png"
+      }
+    ]
+  },
+  "networkTimeout": {
+    "request": 10000,
+    "downloadFile": 10000
+  },
+  "sitemapLocation": "sitemap.json"
+}

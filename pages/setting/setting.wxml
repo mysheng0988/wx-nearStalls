@@ -1,0 +1,39 @@
+<cu-custom bgColor="bg-gradual-orange" isBack="{{true}}">
+  <view slot="backText">返回</view>
+  <view slot="content">设置</view>
+</cu-custom>
+<view class='item-box flex-wrap' bindtap='switchToItem' data-item="address">
+  <image src='/image/my-address-icon.png'></image>
+  <view class='content'>收货地址</view>
+  <image src='/image/right.png'></image>
+</view>
+
+<view class='item-box flex-wrap' bindtap='switchToItem' data-item="account">
+  <image src='/image/preson_pressed.png' ></image>
+  <view class='content'>账户信息</view>
+  <image src='/image/right.png'></image>
+</view>
+
+<view class='item-box flex-wrap' bindtap='switchToItem' data-item="advise">
+  <image src='/image/suggestion-icon.png'></image>
+  <view class='content'>投诉建议</view>
+  <image src='/image/right.png'></image>
+</view>
+
+<view class='item-box flex-wrap' bindtap='switchToItem' data-item="agree">
+  <image src='/image/agreement-icon.png'></image>
+  <view class='content'>用户协议</view>
+  <image src='/image/right.png'></image>
+</view>
+
+<view class='item-box flex-wrap' bindtap='switchToItem' data-item="about">
+  <image src='/image/about-icon.png'></image>
+  <view class='content'>关系我们</view>
+  <image src='/image/right.png'></image>
+</view>
+
+<view class='item-box flex-wrap' bindtap='switchToItem' data-item="exit">
+  <image src='/image/exit-icon.png'></image>
+  <view class='content'>退出登录</view>
+  <image src='/image/right.png'></image>
+</view>

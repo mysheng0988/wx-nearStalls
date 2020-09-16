@@ -1,0 +1,39 @@
+<cu-custom bgColor="bg-shadeTop" class="fixed" isCustom="{{true}}">
+  <view slot="content">摊位首页</view>
+</cu-custom>
+<scroll-view scroll-y style='height: 100vh'>
+<swiper class="screen-swiper round-dot" indicator-dots="true" circular="true" autoplay="true" interval="5000" duration="500">
+  <swiper-item wx:for="{{swiperImg}}" wx:key="id">
+    <image src="{{item.imgPath}}" mode='aspectFill'></image>
+  </swiper-item>
+</swiper>
+<view  class="nav">
+  <view class='shop-msg flex-wrap'>
+    <view class='logo'>
+      <image src="{{userMsg.avatar}}"></image>
+    </view>
+    <view class='shop-content'>
+      <view class="flex-wrap">
+       <view>{{userMsg.nickName}}</view>
+       <view class="text-gray"><text class="icon-dianhua lg text-gray"></text>{{userMsg.phone}}</view>
+       </view>
+      <view class="score flex-center" >
+       店铺星级: <score  rate='{{"9"}}'></score>
+      </view>
+    </view>
+    <view class='shop-btn' bindtap="followUser">{{userMsg.isFollowUser?'已关注':'关注'}}</view>
+  </view>
+  <view class="address"> <text class="icon-location lg text-gray"></text>
+         地址:{{userMsg.location}}
+          {{userMsg.address}}</view>
+  <view class="flex text-center shop-nav" >
+    <view class="cu-item flex-sub {{index==tabCur?'text-orange cur':''}}" wx:for="{{tabText}}" wx:key="index" bindtap="tabSelect" data-id="{{index}}">
+      {{item}}
+    </view>
+  </view>
+  <goods-box goods-list='{{goodsList}}'></goods-box>
+</view>
+</scroll-view>
+
+
+

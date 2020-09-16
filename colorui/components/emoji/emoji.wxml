@@ -1,0 +1,7 @@
+<!--colorui/components/emoji/emoji.wxml-->
+<view class='emoji'>
+    <block wx:for='{{strList}}' wx:key='item'>
+        <block wx:if='{{item.type=="text"}}'>{{item.content}}</block>
+         <block wx:else><image class='img' src='/image/face/{{item.content}}'></image></block>
+    </block>
+</view>

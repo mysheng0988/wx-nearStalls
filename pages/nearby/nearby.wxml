@@ -1,0 +1,51 @@
+<view class='cu-custom'>
+  <view class="cu-bar fixed bg-shadeTop" style="height:{{CustomBar}}px;padding-top:{{StatusBar}}px;">
+    <!-- <navigator class='action' open-type="navigateBack" delta="1" hover-class="none">
+      <text class='icon-back'></text> 返回
+    </navigator> -->
+    <view class='content' style='top:{{StatusBar}}px;'>附近</view>
+  </view>
+</view>
+<swiper class="screen-swiper round-dot" indicator-dots="true" circular="true" autoplay="true" interval="5000" duration="500">
+  <swiper-item wx:for="{{swiperImg}}" wx:key='index'>
+    <image src="{{item.imgPath}}" mode='aspectFill'></image>
+  </swiper-item>
+</swiper>
+<view class='list-box'>
+  <block wx:for="{{shopList}}" wx:key="index"> 
+  <view class="item-box">
+    <view class='flex-center' bindtap='comeShopIndex' data-id="{{item.userId}}">
+      <view class='img'>
+        <image  src="{{item.avatar}}"></image>
+      </view>
+      <view class='content'>
+          <view class='flex-wrap'>
+           <view class='content-title'>{{item.nickName}}</view>
+           <view class='phone text-gray'><text class="icon-dianhua lg"></text>{{item.phone}}</view>
+          </view>
+          <view class="address">{{item.sign==""?"暂无介绍":item.sign}}</view>
+      </view>
+    </view>
+   <view class='flex-wrap'>
+        <view class='address'> <text class="icon-location lg text-gray"></text>{{item.location}}<text wx:if="{{item.address}}">{{item.address}}</text></view>
+        <view class='distance'>{{item.distance}}km</view>
+    </view>
+  </view>
+</block>
+</view>
+<!-- <view class="xin">
+<view class="xin-list" bindtouchend="moveItem" bindtouchstart="moveStart">
+<block wx:for="{{xinList}}" wx:key="key" wx:for-index="idx">
+<view class="single" style="opacity:{{item.display}};transform: translateX({{item.slateX}}) scale({{item.scale}});z-index:{{item.zIndex}};transform-origin: 100% 50% 0;{{item.style}}">
+<view class="xin-shou">
+致 {{item.to}}
+</view>
+<view class="xin-body">
+{{item.msg}}
+</view>
+<view class="shenglue">···</view>
+<view class="xin-xie">By {{item.from}}</view>
+</view>
+</block>
+</view>
+</view> -->

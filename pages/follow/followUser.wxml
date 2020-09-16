@@ -1,0 +1,27 @@
+<view class='container'>
+<cu-custom bgColor="bg-gradual-orange"  isCustom="{{true}}">
+  <view slot="content">关注摊主</view>
+</cu-custom>
+<view class='list-box'>
+  <block wx:for="{{shopList}}" wx:key="index"> 
+    <view class="item-box">
+    <view class='flex-center' bindtap='comeShopIndex' data-id="{{item.userId}}">
+      <view class='img'>
+        <image  src="{{item.avatar}}"></image>
+      </view>
+      <view class='content'>
+          <view class='flex-wrap'>
+           <view class='content-title'>{{item.nickName}}</view>
+            <view class='phone text-gray'><text class="icon-dianhua lg"></text>{{item.phone}}</view>
+          </view>
+          <view class="address">摊位介绍:{{item.sign}}</view>
+      </view>
+    </view>
+   <view class='flex-wrap'>
+        <view class='address'> <text class="icon-location lg text-gray"></text>{{item.location}}<text wx:if="{{item.address}}">{{item.address}}</text></view>
+         <button class="cu-btn round sm  line-blue" bindtap="cancelFollowUser" data-id='{{item.userId}}'>取消关注</button>
+    </view>
+  </view>
+    </block>
+</view>
+</view>

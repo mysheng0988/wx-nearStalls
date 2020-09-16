@@ -1,0 +1,4 @@
+@import "../nearby/nearby.wxss";
+.cu-btn {
+  font-size: 20rpx;
+}

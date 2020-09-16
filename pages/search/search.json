@@ -1,0 +1,6 @@
+{
+  "enablePullDownRefresh": true,
+  "usingComponents": {
+    "goods-box": "/colorui/components/goodsBox/goodsBox"
+  }
+}

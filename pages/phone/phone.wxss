@@ -1,0 +1,68 @@
+.container{
+  width: 100%;
+}
+.logo{
+  width: 100%;
+  height: 350rpx;
+  position: relative;
+}
+.logo .img{
+  width: 120rpx;
+  height: 120rpx;
+  vertical-align: middle;
+  overflow: hidden;
+  position: absolute;
+  bottom:20px;
+  left: 50%;
+  border-radius: 50%;
+  margin: 0 -60rpx;
+}
+.info-box{
+  width: 600rpx;
+  margin: 10rpx auto;
+  text-align: center;
+}
+.code{
+  flex: 1;
+}
+.info{
+  height: 70rpx;
+  margin: 40rpx 10rpx;
+  align-items: center;
+  border-bottom: 1px #cdcdcd solid;
+}
+.info input{
+  width: 100%;
+  height: 70rpx;
+  text-align: left;
+  line-height: 70rpx;
+}
+.code input{
+  flex: 1;
+  text-align: left;
+  height: 70rpx;
+  line-height: 70rpx;
+}
+.code button{
+  width: 200rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  border-radius: 20rpx;
+  border: 1px #60B157 solid;
+}
+.login{
+  height: 80rpx;
+  margin: 40rpx auto;
+  width: 580rpx;
+  line-height: 80rpx;
+  border-radius: 10rpx;
+  color: #fff;
+  background: #60B157;
+}
+.protocol{
+  margin: 0 100rpx;
+  text-align: center;
+}
+.protocol radio{
+  transform: scale(0.7);
+}

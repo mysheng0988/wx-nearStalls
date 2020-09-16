@@ -1,0 +1,85 @@
+ <cu-custom bgColor="bg-gradual-orange" isBack="{{true}}">
+    <view slot="backText">返回</view>
+    <view slot="content">订单列表</view>
+  </cu-custom>
+   <view  class="bg-white nav fixed" style="top:{{CustomBar}}px">
+    <view class="flex text-center">
+      <view class="cu-item flex-sub {{0==tabCur?'text-orange cur':''}}"  bindtap="tabSelect" data-id="0">
+        全部
+      </view>
+       <view class="cu-item flex-sub {{1==tabCur?'text-orange cur':''}}"  bindtap="tabSelect" data-id="1">
+        待付款
+      </view>
+      <view class="cu-item flex-sub {{2==tabCur?'text-orange cur':''}}"  bindtap="tabSelect" data-id="2">
+        待收货
+      </view>
+      <view class="cu-item flex-sub {{3==tabCur?'text-orange cur':''}}" bindtap="tabSelect" data-id="3">
+        已完成
+      </view>
+      <view class="cu-item flex-sub {{4==tabCur?'text-orange cur':''}}" bindtap="tabSelect" data-id="4">
+        已取消
+      </view>
+    </view>
+  </view>
+<view class='order'>
+<!-- <scroll-view class='scroll-view' scroll-y style='height:calc(100vh - {{CustomBar}}px)'> -->
+<block wx:for="{{orderList}}" wx:key="{{item.index}}">
+      <view class='order-box'>
+        <view class='shop-box solid-bottom flex-wrap' >
+            <view class='flex'>
+              <image class='shop'  src='/image/shop.png'></image>
+              <text>{{item.orderModel.shopName}}</text>
+            </view>
+            <view class='flex'>
+              <block wx:if='{{item.orderModel.state=="0"}}'>
+                <view class='text-red state'>未支付</view>
+               </block>
+               <block wx:elif="{{item.orderModel.state=='1'}}">
+                <view class='text-red state'>等待收货</view>
+               </block>
+               <block wx:elif="{{item.orderModel.state=='2'}}">
+                <view class='text-red state'>已完成</view>
+                <text class='icon-delete  text-gray'></text>
+              </block>
+               <block wx:else>
+                <view class='text-red state'>已取消</view>
+                <text class='icon-delete  text-gray'></text>
+              </block>
+            </view>
+        </view>
+        <view class='content-box flex-wrap solid-bottom'>
+          <block wx:if='{{item.data.length==1}}'>
+            <view class='content-img'><image  class="img" src="{{imgPath+item.data[0].goodsImage}}"></image></view>
+            <view class='content-text'>
+                <view class='text-title'>{{item.data[0].goodsName}} </view>
+                <view class='text-norms'>数量: {{item.data.length}}  {{item.data[0].normsValue}}</view>
+            </view>
+          </block>
+          <block wx:else>
+              <view class='content-img-box'>
+                  <scroll-view scroll-x="{{true}}" class='scroll-x'>
+                      <view class='flex'>
+                      <block wx:for="{{item.data}}"  wx:for-item="itemData" wx:for-index="dataIndex"  wx:key='dataIndex'>
+                        <view class='content-img'><image  class="img" src="{{imgPath+itemData.goodsImage}}"></image>
+                        </view>
+                        
+                        </block>
+                      </view>
+                  </scroll-view>
+              </view>
+          </block>
+          <view class='content-totall'>
+              <view class='text-price text-red'>{{item.orderModel.totalAmount}}元</view>
+              <view class='text-norms'>共{{item.data.length}}件</view>
+          </view>
+        </view>
+        <view class='btn-box'>
+            <button class='cu-btn round line-red' wx:if='{{item.orderModel.state=="0"}}'>支付订单</button>
+            <button class='cu-btn round line-black' wx:if='{{item.orderModel.state=="2"}}'>评价晒单</button>
+            <button class='cu-btn round line-black' wx:if='{{item.orderModel.state!="0"}}'>再次购买</button>
+              <button class='cu-btn round line-red' wx:if='{{item.orderModel.state=="1"}}'>确认收货</button>
+        </view>
+    </view>
+</block>
+</view>
+ 

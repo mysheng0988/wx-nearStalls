@@ -1,0 +1,45 @@
+<cu-custom bgColor="bg-gradual-orange" isBack="{{true}}">
+  <view slot="backText">返回</view>
+  <view slot="content">编辑地址</view>
+</cu-custom>
+<view class="cu-form-group">
+    <view class="title">收货人</view>
+    <input placeholder="请输入收货人"  type='text' maxlength='10' bindinput='getUserName' value='{{userName}}'></input>
+</view>
+<view class="cu-form-group">
+    <view class="title">手机号码</view>
+    <input placeholder="请输入手机号码" type='number' maxlength='11' bindinput='phoneNum' value='{{phone}}'></input>
+</view>
+<view class="cu-form-group">
+  <view class="title">地址选择</view>
+  <picker mode="region" bindchange="regionChange" value="{{address}}" custom-item="{{customItem}}">
+    <view class="picker">
+      {{address[0]}}{{address[1]}}{{address[2]}}
+    </view>
+  </picker>
+</view>
+<view class="cu-form-group">
+    <view class="title">详细地址</view>
+    <textarea placeholder="请输入详细地址" auto-height  type='text' bindinput='setAddressDetail' value='{{addressDetail}}'></textarea>
+</view>
+<view class="cu-form-group">
+    <view class="title">标签</view>
+    <input placeholder="如:家、公司、学校等" bindinput='getLabel' value='{{label}}' ></input>
+</view>
+<view class="cu-form-group border-bottom">
+  <view class="title">设为默认地址</view>
+  <switch class="red sm" checked="{{selected}}" bindchange="getAddressSelected"></switch>
+</view>
+<view class='btn-box flex-wrap'>
+<view class="btn-item" bindtap='saveAddress'>
+    <button class="cu-btn round bg-green shadow">
+    <text class="icon-check"></text> 保存</button>
+ </view>
+ <view class="btn-item" bindtap='deleteAddress' wx:if="{{id}}">
+    <button class="cu-btn round bg-red shadow">
+    <text class="icon-close"></text> 删除</button>
+ </view>
+</view>
+
+
+

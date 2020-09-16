@@ -1,0 +1,23 @@
+<view class='goods-box'>
+  <block wx:for='{{goodsList}}' wx:key='item'>
+    <view class='goods-item {{index%2==0?"border-righit":""}}' bindtap='goodsDetail' data-id='{{item.id}}'>
+      <image class='img' src='{{item.goodsImages[0].imagePath}}'></image>
+      <view class='title'>{{item.goodsName}} </view>
+      <view  class='flex-wrap'>
+        <view class='price'>￥{{item.price}}</view>
+        <view class="location" wx:if='{{type==0}}' >
+        <text class="icon-location text-gray"></text>{{item.distance}}km
+        </view>
+        <view class="location" wx:elif='{{type==1}}'>
+           <view class="text-gray" wx:if="{{item.state=='0'}}"><text class="icon-remind"></text>待审核</view>
+           <view class="text-green" wx:elif="{{item.state=='1'}}"><text class="icon-remind"></text>审核通过</view>
+           <view  class="text-red" wx:elif="{{item.state=='2'}}" ><text class="icon-remind"></text>审核不通过</view>
+           <view class="text-yellow" wx:elif="{{item.state=='3'}}" ><text class="icon-remind"></text>已下架</view>
+        </view>
+         <view class="location" wx:else >
+           <button class="cu-btn round sm  line-blue" catchtap="cancelFollowGoods" data-id='{{item.id}}'>取消关注</button>
+        </view>
+      </view>
+     </view>
+  </block>
+</view>

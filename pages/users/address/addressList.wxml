@@ -1,0 +1,29 @@
+<wxs src="../../../utils/common.wxs" module="tools" />
+<cu-custom bgColor="bg-gradual-orange" isBack="{{true}}">
+  <view slot="backText">返回</view>
+  <view slot="content">收货地址</view>
+</cu-custom>
+<view class='address-box'>
+  <block wx:for="{{addressList}}" wx:key="{{item.id}}">
+     <view class='address-item flex-wrap' >
+      <view class='address-content' bindtap='selectedAddress' data-address="{{item}}">
+        <view class='title flex-center'>
+           <view >{{item.userName}}</view>
+           <view class='phone'>{{tools.toHide(item.phone)}}</view>
+           <view class='label bg-red' wx:if='{{item.selected}}'>默认</view>
+           <view class='label bg-blue'>{{item.label}}</view>
+        </view>
+        <view class='address'>{{item.address}}{{item.addressDetail}}</view>
+      </view>
+      <view class='edit-box' bindtap='editAddress' data-id="{{item.id}}">
+        <image class="img" src="/image/address_edit.png"></image>
+      </view>
+    </view>
+  </block>
+</view>
+<view class='btn-box bg-white' bindtap='editAddress' data-id="">
+    <view class='edit-btn bg-gradual-orange'>
+       <text class='icon-roundadd lg text-white'></text>
+       <text>新增地址</text>
+    </view>
+</view>

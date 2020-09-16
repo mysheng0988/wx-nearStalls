@@ -1,0 +1,8 @@
+var toHide = function (phone) {
+  var reg = getRegExp("^(\d{3})\d{4}(\d{4})$");
+  if (phone!=undefined&&phone!=""){
+    return phone.replace(reg, '$1****$2');
+  }
+  return "";
+}
+module.exports.toHide = toHide;

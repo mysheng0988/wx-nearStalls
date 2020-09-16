@@ -1,0 +1,28 @@
+<cu-custom bgColor="bg-gradual-orange" isBack="{{true}}">
+  <view slot="backText">返回</view>
+  <view slot="content">投诉建议</view>
+</cu-custom>
+<view class='container'>
+    <view class='title'>投诉建议</view>
+    <view class="content-text">
+      <textarea placeholder="请写下您要投诉建议内容（500字以内）" bindinput='setContext' auto-focus  value='{{content}}' maxlength='500'/>
+      <view class='fontNum'>{{fontNum}}/500</view>
+    </view>
+    <view class='title top'>上传图片</view>
+    <view class='img-box flex addr-box'>
+      <block wx:for='{{imageData}}' wx:key='key'>
+       <view class='item-img'>
+          <view class='remove' bindtap='removeImage' data-index='{{index}}'><image class='image' src="/image/icon_error.png"></image></view>
+          <image class='img' mode='aspectFill' src='{{item}}'></image>
+        </view>
+      </block>
+      <view class='item-img' bindtap='updataFileData'wx:if='{{imageData.length<6}}'>
+        <image class='img' src='/image/add_img.png'></image>
+      </view>
+    </view>
+    <view class='tip'>
+        <view>提示:</view>
+        <view>一次最多可以上传六张图片</view>
+    </view>
+</view>
+<view class='submit' bindtap='submit'>提交申请</view>

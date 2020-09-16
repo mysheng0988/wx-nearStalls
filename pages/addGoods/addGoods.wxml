@@ -1,0 +1,51 @@
+<cu-custom bgColor="bg-gradual-orange" isBack="{{true}}">
+  <view slot="backText">返回</view>
+  <view slot="content">增加商品</view>
+</cu-custom>
+<view class='container'>
+  <view class="cu-form-group margin-top">
+      <view class="title">商品名称:</view>
+      <textarea placeholder="请输入商品名称" auto-height  type='text' bindinput='setGoodsName' value='{{goodsName}}'></textarea>
+   </view>
+  <view class="cu-form-group">
+      <view class="title">商品类型:</view>
+      <picker bindchange="pickerChange" value="{{index}}" range="{{picker}}" range-key="className">
+        <view class="picker">
+          {{picker[index].className}}
+        </view>
+      </picker>
+   </view>
+   <view class="cu-form-group">
+    <view class="title">商品价格:</view>
+    <text class="text-price text-red"></text>
+    <input class="text-red" placeholder="输入商品价格" value="{{price}}"  bindinput="setPrice"></input>
+  </view>
+   <view class="cu-form-group">
+      <view class="title">商品描述:</view>
+      <textarea placeholder="请输入商品描述" auto-height  type='text' bindinput='setGoodsDescribe' value='{{goodsDescribe}}'></textarea>
+   </view>
+   <view class="update-box">
+    <view class='title top'>上传图片</view>
+    <view class='img-box flex addr-box'>
+      <block wx:for='{{goodsImages}}' wx:key='index'>
+       <view class='item-img' bindtap="previewGoodsImages" data-path="{{item.imagePath}}">
+          <view class='remove' catchtap='removeImage' data-index='{{index}}'><image class='image' src="/image/icon_error.png"></image></view>
+          <image class='img' mode='aspectFill' src='{{item.imagePath}}'></image>
+        </view>
+      </block>
+      <view class='item-img' bindtap='updataFileData'wx:if='{{goodsImages.length<6}}'>
+        <image class='img' src='/image/add_img.png'></image>
+      </view>
+    </view>
+    <view class='tip'>
+        <view>提示:</view>
+        <view>一次最多可以上传六张图片</view>
+    </view>
+   </view>
+</view>
+<view class='btn-box bg-white' data-id="">
+    <view class='edit-btn bg-gradual-orange' bindtap="saveGoodsData">
+       <text class='icon-squarecheck lg text-white'></text>
+       <text>保存商品</text>
+    </view>
+</view>

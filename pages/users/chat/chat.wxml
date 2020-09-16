@@ -1,0 +1,25 @@
+<cu-custom bgColor="bg-gradual-pink" isBack="{{true}}"><view slot="backText">返回</view><view slot="content">聊天</view></cu-custom>
+<view class='chat-main'>
+    <block wx:for='{{msgList}}' wx:key='item'>
+      <view class='chat-item' wx:if='{{item.fromid!=userId}}'>
+        <image class='img' src='{{item.avatar}}'></image>
+        <!-- <view class='content'>{{item.msgContent}}</view> -->
+       <view class='content'> <emoji chat='{{item.content}}'></emoji></view>
+      </view>
+      <view class='mine-item' wx:else>
+          <image class='img' src='{{item.avatar}}'></image>
+          <view class='content'><emoji chat='{{item.content}}'></emoji></view>
+      </view>
+    </block>
+</view>
+
+<view class="cu-bar foot input" style="bottom:{{InputBottom}}px">
+  <view class="action">
+    <text class="icon-sound text-grey"></text>
+  </view>
+  <input class="solid-bottom" bindinput="setInputValue"  value="{{sendVaule}}" bindfocus="InputFocus" bindblur="InputBlur" adjust-position="{{false}}" focus="{{false}}" maxlength="300" cursor-spacing="10"></input>
+  <view class="action">
+    <text class="icon-emojifill text-grey"></text>
+  </view>
+  <button class="cu-btn bg-green shadow" bindtap='sendOne'>发送</button>
+</view>

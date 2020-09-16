@@ -1,0 +1,43 @@
+.container {
+  padding: 10rpx 30rpx;
+  text-align: justify;
+  background: #fff;
+}
+.img-box{
+  height: 120rpx;
+  width: 120rpx;
+  overflow: hidden;
+  border-radius: 60rpx;
+}
+.img-box .img{
+  height: 120rpx;
+  width: 120rpx;
+  overflow: hidden;
+  vertical-align: middle;
+}
+.cu-form-group .title{
+  width: 160rpx;
+}
+.cu-form-group  .content{
+ flex: 1;
+}
+.cu-form-group .location-img{
+  width: 40rpx;
+  height: 40rpx;
+  overflow: hidden;
+  vertical-align: middle;
+}
+.btn-box{
+  margin-top:30rpx;
+  padding: 18rpx 30rpx;
+}
+.btn-item{
+  margin: 0 20rpx;
+  flex: 1;
+}
+
+.cu-btn{
+  display: flex;
+  height: 80rpx;
+  line-height: 80rpx;
+}

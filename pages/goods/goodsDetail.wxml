@@ -1,0 +1,62 @@
+<view class='container'>
+  <cu-custom bgColor="bg-gradual-orange"  isCustom="{{true}}">
+    <view slot="content">商品详情</view>
+  </cu-custom>
+<swiper class="screen-swiper round-dot" indicator-dots="true" circular="true" autoplay="true" interval="5000" duration="500">
+  <swiper-item wx:for="{{goodsModel.goodsImages}}" wx:key="item">
+    <image src='{{item.imagePath}}' mode='aspectFill'></image>
+  </swiper-item>
+</swiper>
+<view class='item-box'>
+  <view class='name'>{{goodsModel.goodsName}}</view>
+  <view class='title'>{{goodsModel.goodsDescribe}}</view>
+</view>
+<view class='item-box flex-wrap'>
+   <view class='price'>￥{{goodsModel.price}}元 </view>
+   <!-- <view bindtap="followGoods">
+       <image class="collect_img" src='/image/collection.png'></image>
+   </view> -->
+</view>
+<view  class="bg-white nav">
+<view class='shop-msg' bindtap="comeTostalls" data-id="{{userMsg.userId}}">
+  <view class='flex-wrap'>
+    <view class='logo'>
+      <image src='{{userMsg.avatar}}'></image>
+    </view>
+    <view class='shop-content'>
+      <view>{{userMsg.nickName}} <image class='img' src='/image/btn_more.png'></image></view>
+      <view class="score flex-center" >
+       店铺星级: <score  rate='{{9}}'></score>
+      </view>
+    </view>
+    <view class='shop-btn' catchtap="followUser" data-id="{{userMsg.userId}}">{{userMsg.isFollowUser?'已关注':"关注"}}</view>
+  </view>
+   <view class='address-box' bindtap='navigateToShop' >
+      <view class="location-box">
+          <text class="icon-location lg "></text>
+         地址:{{userMsg.location}}
+          {{userMsg.address}}
+      </view>
+      <view class='distance'>{{userMsg.distance}}km</view>
+   </view>
+</view>
+</view>
+<view class="cu-bar bg-white tabbar border shop">
+    <button class="action" open-type="contact"  bindcontact="handleContact">
+      <view class="icon-service text-green">
+        <view class="cu-tag badge"></view>
+      </view>
+      客服
+    </button>
+     <view class="action text-blue" bindtap="callPhone" data-phone="{{userMsg.phone}}">
+      <view class="icon-dianhua"></view> 电话
+    </view>
+     <view class="action text-orange" bindtap="followGoods" > 
+      <text class="{{goodsModel.isFollowGoods?'icon-favorfill':'icon-favor'}}"></text> 
+      {{goodsModel.isFollowGoods?"已收藏":"收藏"}}
+    </view>
+    <view class="btn-group" bindtap="makeOrder">
+      <button class="cu-btn bg-red round shadow-blur">预约取件</button>
+    </view>
+  </view>
+  </view>

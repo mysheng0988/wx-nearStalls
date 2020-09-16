@@ -1,0 +1,7 @@
+{
+  "enablePullDownRefresh": true,
+  "usingComponents": {
+    "score": "/colorui/components/score/score",
+    "goods-box": "/colorui/components/goodsBox/goodsBox"
+  }
+}

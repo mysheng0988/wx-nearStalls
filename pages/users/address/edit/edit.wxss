@@ -1,0 +1,20 @@
+page{
+  background: #fff;
+}
+.border-bottom{
+  border: 1rpx solid #eee;
+}
+.btn-box{
+  margin-top:30rpx;
+  padding: 18rpx 30rpx;
+}
+.btn-item{
+  margin: 0 20rpx;
+  flex: 1;
+}
+
+.cu-btn{
+  display: flex;
+  height: 80rpx;
+  line-height: 80rpx;
+}

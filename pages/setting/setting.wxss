@@ -1,0 +1,19 @@
+.item-box{
+  height: 80rpx;
+  line-height: 80rpx;
+  color: #222;
+  background: #fff;
+  margin-top: 20rpx;
+  padding: 0 30rpx;
+}
+.item-box image{
+  width: 40rpx;
+  height: 40rpx;
+  overflow: hidden;
+  vertical-align: middle;
+}
+.item-box .content{
+  flex: 1;
+  text-align: left;
+  margin: 0 10rpx;
+}

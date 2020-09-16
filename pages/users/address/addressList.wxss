@@ -1,0 +1,53 @@
+
+.address-item{
+  padding: 18rpx 30rpx;
+  width: 100%;
+  background: #fff;
+  border-bottom: 1rpx solid #eee;
+  position: relative;
+}
+.address-content{
+  flex: 1;
+}
+.edit-box{
+  width: 40rpx;
+  height: 40rpx;
+}
+.edit-box .img{
+  width: 40rpx;
+  height: 40rpx;
+  vertical-align:middle;
+  overflow: hidden 
+}
+.title{
+  color: #000;
+  font-size: 28rpx;
+  font-weight: bold;
+}
+.phone{
+  margin: 0 20rpx;
+}
+.label{
+  padding: 0 10rpx;
+  margin: 0 10rpx;
+  font-size: 22rpx;
+  border-radius: 8rpx;
+}
+.address{
+  margin-top:10rpx;
+  color: #666;
+  font-size: 22rpx;
+}
+.btn-box{
+  padding: 18rpx 30rpx;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+}
+.edit-btn{
+  height: 80rpx;
+  line-height: 80rpx;
+  width: 690rpx;
+  border-radius: 40rpx;
+  text-align: center;
+}

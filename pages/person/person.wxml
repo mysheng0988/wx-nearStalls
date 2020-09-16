@@ -1,0 +1,72 @@
+
+    <view class='top-bg-img bg-gradual-orange' >
+        <view class='login flex-wrap' >
+          <view class='header'>
+              <open-data class='img' type='userAvatarUrl'></open-data>
+          </view>
+          <view class="context" wx:if='{{!token}}' bindtap='tologin'>
+            <text>点击登录</text>
+          </view>
+          <view class="context" wx:else>
+            <open-data  type='userNickName'></open-data>
+            <view>{{phone}}</view>
+          </view>
+          <view class='setting' bindtap='setting'>
+            <image src="/image/setting_icon.png"></image>
+          </view>
+        </view>
+         <view class='follow flex-wrap'>
+        <view class='follow-item' bindtap="followGoodsPage">
+            <view >{{count.followGoodsNum}}</view>
+            <view >关注的商品</view>
+        </view>
+         <view class='follow-item' bindtap="followUserPage">
+            <view >{{count.followUserNum}}</view>
+            <view >关注的摊主</view>
+        </view>
+         <view class='follow-item' bindtap="openIndex" >
+            <view >{{count.goodsNum}}</view>
+            <view >我的商品</view>
+        </view>
+    </view>
+</view>
+<view class='item-box flex-wrap' bindtap='switchToItem' data-item="account">
+  <image src='/image/stalls-manage.png' ></image>
+  <view class='content'>摊位管理</view>
+  <image src='/image/right.png'></image>
+</view>
+<view class='item-box flex-wrap' bindtap='switchToItem' data-item="goods">
+  <image src='/image/goods-setting.png' ></image>
+  <view class='content'>商品管理</view>
+  <image src='/image/right.png'></image>
+</view>
+<view class='item-box flex-wrap' bindtap='switchToItem' data-item="qrcode">
+  <image src='/image/icon-qrcode.png' ></image>
+  <view class='content'>二维码</view>
+  <image src='/image/right.png'></image>
+</view>
+<view class='item-box flex-wrap' bindtap='switchToItem' data-item="scan">
+  <image src='/image/scan-qrcode.png' ></image>
+  <view class='content'>扫一扫</view>
+  <image src='/image/right.png'></image>
+</view>
+
+<view class="cu-modal show" hidden="{{modalName!='qrcode'}}" >
+  <view class="cu-dialog" >
+    <view class="cu-bar bg-white justify-end">
+      <view class="content">我的二维码</view>
+      <view class="action" bindtap="hideModal">
+        <text class="icon-close text-red"></text>
+      </view>
+    </view>
+    <view class="padding-xl"  >
+       <canvas class="canvas" canvas-id='canvas'></canvas>
+    </view>
+  </view>
+</view>
+
+
+
+
+
+

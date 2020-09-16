@@ -1,0 +1,53 @@
+<cu-custom bgColor="bg-gradual-orange" isBack="{{true}}">
+  <view slot="backText">返回</view>
+  <view slot="content">账户信息</view>
+</cu-custom>
+<view class='container'>
+    <view class="cu-form-group">
+        <view class="title">用户头像</view>
+        <view class='img-box'>
+            <image class="img" src="{{data.avatar}}"></image>
+        </view>
+       
+    </view>
+    <view class="cu-form-group">
+        <view class="title">用户昵称</view>
+        <view>{{data.nickName}}</view>
+    </view>
+    <view class="cu-form-group">
+        <view class="title">手机号码</view>
+       <view >{{data.phone}}</view>
+    </view>
+    <view class="cu-form-group" bindtap="selectLocation">
+        <view class="title">选择位置</view>
+        <view class="content">{{data.location}}</view>
+        <image class="location-img" src="/image/nearby_normal.png"></image>
+    </view>
+     <view class="cu-form-group">
+     <view class="title">位置详情</view>
+      <textarea placeholder="请输入位置详情" auto-height  type='text' bindinput='setAddress' value='{{data.address}}'></textarea>
+    </view>
+    <view class="cu-form-group">
+     <view class="title">摊位介绍</view>
+      <textarea placeholder="请输入摊位介绍" auto-height  type='text' bindinput='setSign' value='{{data.sign}}'></textarea>
+    </view>
+    <view class="cu-form-group">
+        <view class="title">注册时间</view>
+        <view>{{data.createDate}}</view>
+    </view>
+</view>
+
+<view class='btn-box flex-wrap'>
+<view class="btn-item" >
+    <button class="cu-btn round bg-orange shadow" open-type="getUserInfo" lang="zh_CN" bindgetuserinfo='updateAccount'>
+    <text class="icon-form"></text> 更新信息</button>
+ </view>
+ <view class="btn-item" bindtap="changeStallsState" >
+    <button class="cu-btn round bg-olive shadow">
+    <text class="icon-remind lg text-white" wx:if="{{data.state==0}}"></text> 
+     <text class="icon-exit lg text-white" wx:else></text> 
+    {{data.state==0?"开摊":"闭摊"}} 
+    </button>
+   
+ </view>
+</view>

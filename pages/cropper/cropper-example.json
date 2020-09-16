@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "cropper":"/colorui/components/cropper/cropper"
+  },
+  "disableScroll": true
+}

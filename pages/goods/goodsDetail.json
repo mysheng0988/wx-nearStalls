@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "score": "/colorui/components/score/score"
+  }
+}

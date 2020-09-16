@@ -1,0 +1,39 @@
+.wx-star-panel{
+  display: flex;
+  justify-content:flex-start;
+}
+.wx-star{
+  position: relative;
+  flex: 1;
+  height: 30rpx;
+  margin: 2rpx;
+  color: #ccc;
+  text-align: center;
+  line-height: 30rpx;
+  font-size: 22rpx;
+}
+.wx-star-big{
+  position: relative;
+  flex: 1;
+  height: 30rpx;
+  margin: 2rpx;
+  color: #ccc;
+  text-align: center;
+  line-height: 30rpx;
+  font-size: 36rpx;
+}
+.wx-star-right{
+  position: absolute;
+  top: 0;
+  right: 0;
+  /* left: 50%; */
+  bottom: 0;
+  overflow: hidden;
+  /* text-indent: -50%; */
+}
+.wx-star .wx-star-checked{
+  color: #eb3c31;
+}
+.wx-star-big .wx-star-checked{
+  color: #eb3c31;
+}
