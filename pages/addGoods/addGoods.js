@@ -68,7 +68,7 @@ Page({
    getClassData(){
    return app.post({
       url: 'stalls/class/list',
-      method:"get",
+      method:"post",
       data: {},
     })
       .then((res) => {

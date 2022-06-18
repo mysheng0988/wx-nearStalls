@@ -1,6 +1,7 @@
 /**index.wxss**/
 .container{
-  background: #f8f8f8
+  background: #f1f1f1;
+  /* background-color: red; */
 }
 .swiper {
   width: 100%;
@@ -16,6 +17,12 @@
 .nav{
   margin: 10rpx 0;
   box-shadow: 0 1rpx 1rpx rgba(0, 0, 0, 0.05);
+}
+.search-box{
+  width: 100%;
+  padding-top: 30rpx;
+  background: #fff;
+  border-radius: 50rpx 50rpx 0 0;
 }
 .scan-qrcode{
   margin-left: 20rpx;

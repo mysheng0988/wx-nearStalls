@@ -31,7 +31,7 @@ Page({
   getSwiperImg() {
     let that = this;
     app.post({
-      url: 'stalls/banner/userTerms',
+      url: 'stalls/banner/list',
       method:"post",
       data: {
         type: "1"

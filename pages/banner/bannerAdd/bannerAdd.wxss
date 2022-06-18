@@ -1,0 +1,12 @@
+.img-box{
+  width: 750rpx;
+  height: 360rpx;
+  overflow: hidden;
+  vertical-align: middle;
+}
+.img-box image{
+  width: 750rpx;
+  height: 360rpx;
+  overflow: hidden;
+  vertical-align: middle;
+}

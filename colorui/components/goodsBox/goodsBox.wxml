@@ -3,10 +3,14 @@
     <view class='goods-item {{index%2==0?"border-righit":""}}' bindtap='goodsDetail' data-id='{{item.id}}'>
       <image class='img' src='{{item.goodsImages[0].imagePath}}'></image>
       <view class='title'>{{item.goodsName}} </view>
+      <view  class='flex-wrap' wx:if="{{type==0}}">
+        <view class='scribe-price'>原价:￥999.00</view>
+        <view class='scribe-price text-gray'>会员价:￥888.00</view>
+      </view>
       <view  class='flex-wrap'>
-        <view class='price'>￥{{item.price}}</view>
+        <view class='price'>促销价:￥{{item.price}}</view>
         <view class="location" wx:if='{{type==0}}' >
-        <text class="icon-location text-gray"></text>{{item.distance}}km
+        <text class="icon-location text-gray">{{item.distance}}km</text>
         </view>
         <view class="location" wx:elif='{{type==1}}'>
            <view class="text-gray" wx:if="{{item.state=='0'}}"><text class="icon-remind"></text>待审核</view>

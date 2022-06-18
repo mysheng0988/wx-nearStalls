@@ -76,10 +76,22 @@ Page({
       url: '/pages/addGoods/addGoods',
     })
   },
-  makeOffGoods(e){
+  auditDetail(e){
     let id=e.currentTarget.dataset.id;
+    wx.navigateTo({
+      url: '/pages/goodsAudit/goodsAudit?id='+id,
+    })
+  },
+  auditSubmit(e){
+    let id=e.currentTarget.dataset.id;
+    let data={
+      goodsId:id,
+      handleType:1,
+    }
       app.post({
-        url:"stalls/goods/change/state/"+id+"/3"
+        url:"stalls/audit/createRecord",
+        method:"post",
+        data:data,
       }).then(res=>{
         if(res.code==0){
           this.setData({
@@ -89,6 +101,34 @@ Page({
         }else{
           app.toast(res.msg)
         }
+      })
+  },
+  makeOffGoods(e){
+    let id=e.currentTarget.dataset.id;
+    let goodsState=e.currentTarget.dataset.state==1?2:1;
+    let data={
+      goodsId:id,
+      goodsState,
+    }
+      app.post({
+        url:"stalls/goods/setting",
+        method:"post",
+        data:data,
+      }).then(res=>{
+        if(res.code==0){
+          this.setData({
+            goodsList:[]
+          })
+          this.getGoodList(1,10)
+        }else{
+          app.toast(res.msg)
+        }
+      })
+  },
+  openGoodsDetail(e){
+    let id=e.currentTarget.dataset.id;
+      wx.navigateTo({
+        url: '/pages/goods/goodsDetail?goodsId='+id,
       })
   },
   editGoodsPage(e){

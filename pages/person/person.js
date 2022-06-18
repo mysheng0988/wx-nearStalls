@@ -61,8 +61,12 @@ Page({
           url: '/pages/editGoods/editGoods',
         })
         break;
+        case "banner":
+          wx.navigateTo({
+            url: '/pages/banner/bannerList/bannerList',
+          })
+          break;
         case "qrcode":
-          
           this.showUserQRCode();
           break;
         case "scan":

@@ -86,11 +86,8 @@ Page({
     
       
       },
-      
-      //剪裁失败的回调
       fail:function(res){
       },
-      //剪裁结束的回调
       complete:function(){
         //complete
       }

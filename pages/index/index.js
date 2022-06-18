@@ -21,7 +21,7 @@ Page({
   onLoad: function () {
     let that=this;
    this.getSwiperImg();
-   this.getGoodList();
+   this.getGoodList(1,10);
    this.getClassData();
   },
   onShow: function () {
@@ -42,7 +42,7 @@ Page({
   getClassData(){
     app.post({
       url: 'stalls/class/list',
-      method:"get",
+      method:"post",
       data: {},
     })
       .then((res) => {
@@ -89,7 +89,7 @@ Page({
   getSwiperImg(){
     let that=this;
     app.post({
-      url: 'stalls/banner/userTerms',
+      url: 'stalls/banner/list',
       method:"post",
       data: {
         type:"0"

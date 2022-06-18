@@ -1,4 +1,6 @@
 <view class="container">
+  <cu-custom bgColor="bg-gradual-orange" isBack="{{false}}" isLabel="{{true}}">
+</cu-custom>
   <swiper class="swiper" indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular='{{circular}}' indicator-color='{{color}}' indicator-active-color='red' bindchange='onSlideChangeEnd'>
   <block wx:for="{{swiperImg}}" wx:key='key'>
     <swiper-item bindtap="clickItem" >
@@ -12,25 +14,23 @@
 <image  src='/image/icon_notice.png'></image>
 <view class='scroll-box'>
 <view class="srcoll" >温馨提示:实时地摊试用行中，实时地摊只提供附近人的信息服务，交易请选择当面交易，以防上当受骗！</view>
-<!-- <image class='img' bindtap='hideNotice' src='/image/close_no.png'></image> -->
 </view>
 </view>
-<view class="cu-bar search bg-white" >
-    <!-- <view class="cu-avatar round" style="background-image:url(https://image.weilanwl.com/img/square-2.jpg);"></view> -->
+<view class="search-box">
+  <view class="cu-bar search bg-white" >
     <image bindtap="scanQRcode" class="scan-qrcode" src='/image/index-qrcode.png' ></image>
     <view class="search-form round" bindtap="searchGoods">
       <text class="icon-search"></text>
       <text class="text-gray">搜索商品、店铺</text>
     </view>
-    <!-- <view class="action">
-      <text>北京</text>
-      <text class="icon-triangledownfill"></text>
-    </view> -->
   </view>
-<scroll-view scroll-x class="bg-white nav" scroll-with-animation scroll-left="{{scrollLeft}}" >
+  <scroll-view scroll-x class="bg-white nav" scroll-with-animation scroll-left="{{scrollLeft}}" >
   <view class="cu-item {{index==TabCur?'text-orange cur':''}}" wx:for="{{tabNav}}" wx:key="index" bindtap="tabSelect" data-id="{{index}}" data-type="{{item.classCode}}">
     {{item.className}}
   </view>
 </scroll-view>
+</view>
+
+
 <goods-box type="{{0}}" goods-list='{{goodsList}}'></goods-box>
 </view>

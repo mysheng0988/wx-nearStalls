@@ -5,4 +5,11 @@ var toHide = function (phone) {
   }
   return "";
 }
+var toFixed= function (value) {
+  if(!value){
+    value=0;
+  }
+  return value.toFixed(2)
+}
 module.exports.toHide = toHide;
+module.exports.toFixed = toFixed;

@@ -63,7 +63,7 @@ Page({
     let latitude=wx.getStorageSync('latitude')
     let userId=this.data.userId;
    return app.post({
-      url: 'stalls/goods/user/list',
+      url: 'stalls/goods/list',
       method:"post",
       data: {
         longitude,
@@ -113,18 +113,21 @@ Page({
   },
   getSwiperImg() {
     let that = this;
+    let userId=this.data.userId;
     app.post({
       url: 'stalls/banner/userTerms',
       method:"post",
       data: {
+        userId,
         type: "2"
       },
     })
       .then((res) => {
-        console.log(res)
-        that.setData({
-          swiperImg: res.data.items
-        })
+        if(res.code==0){
+          that.setData({
+            swiperImg: res.data
+          })
+        }
       })
   },
   tabSelect(e) {

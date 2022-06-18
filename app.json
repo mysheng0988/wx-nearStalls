@@ -21,7 +21,11 @@
     "pages/follow/followUser",
     "pages/follow/followGoods",
     "pages/search/search",
-    "pages/editGoods/editGoods"
+    "pages/editGoods/editGoods",
+    "pages/banner/bannerList/bannerList",
+    "pages/banner/bannerAdd/bannerAdd",
+    "pages/goodsAudit/goodsAudit",
+    "pages/banner/bannerAudit/bannerAudit"
   ],
   "requiredBackgroundModes": [
     "audio",

@@ -1,0 +1,12 @@
+page{
+  background: #fff;
+}
+.timeline{
+  padding: 18rpx 30rpx;
+  margin-top: 10rpx;
+  background: #fff;
+}
+.timeline-box{
+  padding: 18rpx 30rpx;
+  background: #fff;
+}

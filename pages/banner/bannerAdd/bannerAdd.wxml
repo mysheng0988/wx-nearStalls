@@ -1,0 +1,11 @@
+<cu-custom bgColor="bg-gradual-orange" isBack="{{true}}">
+	<view slot="backText">返回</view>
+	<view slot="content">{{barTitle}}</view>
+</cu-custom>
+<view class="img-box">
+   <image src="https://www.chudshop.com/image/1457503CEEEE7F8D4A7802AB1C996D67/1575343497230.jpeg"></image>
+</view>
+<view class="msg-box">
+   
+    
+</view>

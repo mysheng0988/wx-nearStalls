@@ -1,43 +1,53 @@
 <cu-custom bgColor="bg-gradual-orange" isBack="{{true}}">
-  <view slot="backText">返回</view>
-  <view slot="content">商品管理</view>
+	<view slot="backText">返回</view>
+	<view slot="content">商品管理</view>
 </cu-custom>
 <view class="cu-bar search bg-white">
-    <view class="search-form round">
-      <text class="icon-search"></text>
-      <input type="text" placeholder="输入关键词、商品首字母检索" confirm-type="search" bindinput="setKeyword"></input>
-    </view>
-    <view class="action">
-      <button class="cu-btn bg-gradual-orange shadow-blur round" bindtap="getSeachData">搜索</button>
-    </view>
-  </view>
+	<view class="search-form round">
+		<text class="icon-search"></text>
+		<input type="text" placeholder="输入关键词、商品首字母检索" confirm-type="search" bindinput="setKeyword"></input>
+	</view>
+	<view class="action">
+		<button class="cu-btn bg-gradual-orange shadow-blur round" bindtap="getSeachData">搜索</button>
+	</view>
+</view>
 <view class="list-box">
-  <block wx:for='{{goodsList}}' wx:key="id">
-    <view class="item-box flex-wrap" >
-    <view class="img">
-       <image src="{{item.goodsImages[0].imagePath}}" ></image>
-    </view>
-    <view class="content">
-        <view class="title">{{item.goodsName}} </view>
-        <view class="state text-gray" wx:if="{{item.state==0}}"> <text class="icon-remind "></text>待审核</view>
-         <view class="state text-gray" wx:elif="{{item.state==1}}"> <text class="icon-remind "></text>审核通过</view>
-         <view class="state text-red" wx:elif="{{item.state==2}}"> <text class="icon-remind "></text>审核不通过</view>
-          <view class="state text-red" wx:else> <text class="icon-remind ">已下架</text></view>
-        <view class="flex-wrap">
-          <text class="text-price text-red">{{item.price}}</text>
-          <view>
-              <button class="cu-btn sm round line-green" bindtap="editGoodsPage" data-id='{{item.id}}'>修改</button>
-               <button class="cu-btn sm round line-red" bindtap="makeOffGoods" data-id='{{item.id}}' wx:if="{{item.state!=3}}">下架</button>
-          </view>
-        </view>
-    </view>
-  </view>
-  </block>
-  
+	<block wx:for='{{goodsList}}' wx:key="id">
+		<view class="item-box">
+			<view class="flex-wrap">
+				<view class="img">
+					<image src="{{item.goodsImages[0].imagePath}}"></image>
+				</view>
+				<view class="content">
+					<view class="title">{{item.goodsName}} </view>
+          <view class="state text-red" wx:if="{{item.auditStatus=='3'}}">{{item.reason}}</view>
+					<view class="flex-wrap">
+						<text class="text-price text-red">{{item.price}}</text>
+						<view class="state text-gray" wx:if="{{item.goodsState=='0'&&item.auditStatus==0}}"> <text class="icon-remind "></text>已添加</view>
+						<view class="state text-gray" wx:elif="{{item.auditStatus=='1'}}"> <text class="icon-remind "></text>待审核</view>
+						<view class="state text-gray" wx:elif="{{item.auditStatus=='2'&&item.goodsState=='1'}}"> <text class="icon-remind "></text>已上架</view>
+						<view class="state text-red" wx:elif="{{item.auditStatus=='2'&&item.goodsState=='2'}}"> <text class="icon-remind "></text>已下架</view>
+						<view class="state text-gray" wx:elif="{{item.goodsState=='0'&&item.auditStatus=='3'}}"> <text class="icon-remind "></text>审核不通过</view>
+						<view class="state text-red" wx:elif="{{item.goodsState=='3'}}"> <text class="icon-remind "></text>已下架</view>
+						<view class="state text-red" wx:else> <text class="icon-remind ">强制下架</text></view>
+					</view>
+				</view>
+			</view>
+      <view class="handle-box">
+			<button class="cu-btn sm round line-orange" bindtap="auditDetail" data-id='{{item.id}}' wx:if="{{item.auditStatus!=0}}">审核详情</button>
+        <button class="cu-btn sm round line-red" bindtap="auditSubmit" data-id='{{item.id}}' wx:if="{{item.auditStatus!=2&&item.auditStatus!=1}}">提交审核</button>
+        <button class="cu-btn sm round line-green" bindtap="editGoodsPage" data-id='{{item.id}}'>修改商品</button>
+          <button class="cu-btn sm round line-red" bindtap="makeOffGoods" data-id='{{item.id}}' data-state='{{item.goodsState}}' wx:if="{{item.goodsState==1}}">商品下架</button>
+           <button class="cu-btn sm round line-red" bindtap="makeOffGoods" data-id='{{item.id}}' data-state='{{item.goodsState}}'  wx:if="{{item.goodsState==2}}">商品上架</button>
+            <button class="cu-btn sm round line-blue" bindtap="openGoodsDetail" data-id='{{item.id}}'>商品预览</button>
+       </view>
+		</view>
+	</block>
+
 </view>
 <view class='btn-box bg-white' bindtap='addGoodsPage' data-id="">
-    <view class='edit-btn bg-gradual-orange'>
-       <text class='icon-roundadd lg text-white'></text>
-       <text>新增商品</text>
-    </view>
+	<view class='edit-btn bg-gradual-orange'>
+		<text class='icon-roundadd lg text-white'></text>
+		<text>新增商品</text>
+	</view>
 </view>

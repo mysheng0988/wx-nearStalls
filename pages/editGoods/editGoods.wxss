@@ -43,9 +43,7 @@
 .item-box .content .state{
    font-size: 20rpx;
 }
-.item-box .content .cu-btn{
-  margin-left: 10rpx;
-}
+
 
 .btn-box{
   padding: 18rpx 30rpx;
@@ -59,4 +57,15 @@
   width: 690rpx;
   border-radius: 40rpx;
   text-align: center;
+}
+.handle-box{
+  border-top: 1px solid #e8e8e8;
+  margin-top:18rpx;
+  padding-top: 18rpx;
+  justify-content:flex-end;
+  display: flex;
+  display:  -webkit-flex;
+}
+.handle-box .cu-btn{
+  margin-left: 10rpx;
 }

@@ -2747,9 +2747,9 @@ scroll-view.cu-steps .cu-item {
   flex-direction: column;
 }
 
-.flex-wrap {
+/* .flex-wrap {
   flex-wrap: wrap;
-}
+} */
 
 .align-start {
   align-items: flex-start;
@@ -3735,4 +3735,18 @@ scroll-view.cu-steps .cu-item {
 
 .text-shadow {
   text-shadow: 2rpx 4rpx 6rpx rgba(0, 0, 0, 0.4);
+}
+.label-box{
+  padding-left: 10rpx;
+  display: flex;
+  align-items: center;
+  font-size: 30rpx;
+  font-weight: bold;
+}
+.label-box .label-img{
+  margin: 0 20rpx;
+  height: 50rpx;
+  width: 50rpx;
+  vertical-align: middle;
+  overflow: hidden;
 }

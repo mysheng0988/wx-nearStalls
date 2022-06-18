@@ -1,0 +1,18 @@
+<cu-custom bgColor="bg-gradual-orange" isBack="{{true}}">
+	<view slot="backText">返回</view>
+	<view slot="content">商品审核详情</view>
+</cu-custom>
+
+ <view class="timeline text-bold">审核详情</view>
+    <view class="timeline-box" >
+    <timeline wx:for="{{auditList}}" date-time="{{item.handleTime}}">
+        <view >
+          <view>操作人:{{item.handleUserName}}</view>
+          <view wx:if="{{item.handleType=='1'}}"> 操作事件:提交审核</view>
+          <view wx:elif="{{item.handleType=='2'}}" class="text-green"> 操作事件:审核通过</view>
+          <view wx:elif="{{item.handleType=='3'}}" class="text-red"> 操作事件:审核不通过</view>
+          <view wx:elif="{{item.handleType=='4'}}" class="text-red">操作事件:强制下架</view>
+          <view class="text-red" wx:if="{{item.handleType>2}}">原因:{{item.conments}}</view>
+        </view>
+    </timeline>
+    </view>

@@ -13,10 +13,10 @@
         <input placeholder-class='placeholder' class="code" placeholder='请输入短信验证码' type='number' maxlength='6' bindinput='securityCode' type='number' value='{{validateCode}}'></input>
         <button type='default' bindtap="pverify" disabled="{{phDisabled}}"  size='mini'>{{verifyWord}}</button>
       </view>
-      <view class='info flex-wrap'>
-        <input placeholder-class='placeholder' placeholder='请输入密码' type='number' maxlength='18' bindinput='bindpassword' type='password' value='{{password}}'></input>
+      <!-- <view class='info flex-wrap'>
+        <input placeholder-class='placeholder' placeholder='请输入密码' type='number' maxlength='18' bindinput='bindpassword' type='password' value='{{password}}'></input> -->
         <!-- <button type='default' disabled="{{phDisabled}}" open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="bindGetUserInfo" size='mini'>{{verifyWord}}</button> -->
-      </view>
+      <!-- </view> -->
     </view>
     <button class='login' open-type="getUserInfo" lang="zh_CN" bindgetuserinfo='loginUser' >确认登录</button>
     <!-- 阅读协议 -->

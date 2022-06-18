@@ -1,0 +1,9 @@
+<view class="timeLine"> 
+       <view class="timeText">
+        <view class="round bg-orange"></view>
+        <text class="text-grey">{{dateTime}}</text>
+        </view>
+        <view class="content-box text-gray">
+            <slot></slot>
+        </view>
+</view>

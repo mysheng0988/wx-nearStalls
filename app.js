@@ -38,6 +38,7 @@ App({
   getLocation(isNew = false) {
     return new Promise((resolve, reject) => {
       if (!isNew && this.globalData.location.latitude) {
+        console.log(333333333)
         resolve(this.globalData.location);
         return;
       }
@@ -67,10 +68,6 @@ App({
             city: regeocodeData.addressComponent.district //获取城市
           };
         wx.setStorageSync("city", regeocodeData.addressComponent.district)
-          // that.brocast({
-          //   path: "pages/index/index",
-          //   method: "getCinemaData"
-          // })
         },
       fail: function (res) {
         let latitude = wx.getStorageSync("latitude");

@@ -102,10 +102,12 @@ Page({
       },
     })
       .then((res) => {
-        console.log(res)
-        that.setData({
-          swiperImg: res.data.items
-        })
+        if(res.code==0){
+          that.setData({
+            swiperImg: res.data
+          })
+        }
+        
       })
   },
   tabSelect(e) {

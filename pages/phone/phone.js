@@ -7,7 +7,7 @@ Page({
   data: {
     RadioType:1,
     phone:"",
-    password:"",
+    password:"123456",
     validateCode:"",
     phDisabled: false,
     verifyWord: '获取验证码',
@@ -103,12 +103,13 @@ Page({
     var validateCode=that.data.validateCode;
     //用户按了允许授权按钮
     var data = e.detail.userInfo;
+    console.log(data)
     var nickName = data.nickName;
     var avatar = data.avatarUrl;
     var sex = data.gender;
-    var city = data.city;
-    var province = data.province;
-    let location=wx.getStorageSync('location');
+    var city = app.globalData.address.city;
+    var province =app.globalData.address.province;
+    let location=province+wx.getStorageSync('location');
     let longitude=wx.getStorageSync('longitude');
     let latitude=wx.getStorageSync('latitude')
     wx.showLoading({

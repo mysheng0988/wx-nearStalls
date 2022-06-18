@@ -1,0 +1,27 @@
+.timeLine{
+  background: #fff;
+  line-height: 45rpx;
+}
+.timeLine .title{
+   margin:20rpx 0;
+   font-weight: bold;
+}
+.timeText{
+  display: flex;
+  display: -webkit-flex;
+}
+.round{
+  margin:10rpx 20rpx;
+  background: #f37b1d;
+  width: 20rpx;
+  height: 20rpx;
+  overflow: hidden;
+  border-radius: 10rpx;
+}
+.content-box{
+  margin:0 28rpx;
+  line-height: 50rpx;
+  padding: 18rpx 30rpx;
+  border-left: 2rpx solid #ccc;
+  font-size: 24rpx;
+}

@@ -1,0 +1,50 @@
+<cu-custom bgColor="bg-gradual-orange" isBack="{{true}}">
+	<view slot="backText">返回</view>
+	<view slot="content">轮播图管理</view>
+</cu-custom>
+<view class="cu-bar search bg-white">
+	<view class="search-form round">
+		<text class="icon-search"></text>
+		<input type="text" placeholder="输入标题关键词、首字母检索" confirm-type="search" bindinput="setKeyword"></input>
+	</view>
+	<view class="action">
+		<button class="cu-btn bg-gradual-orange shadow-blur round" bindtap="getSeachData">搜索</button>
+	</view>
+</view>
+<view class="list-box">
+	<block wx:for='{{bannerList}}' wx:key="id">
+		<view class="item-box">
+			<view class="flex-wrap">
+				<view class="img">
+					<image src="{{item.imgPath}}"></image>
+				</view>
+				<view class="content">
+					<view class="title">{{item.title}} </view>
+          <view class="state text-red" wx:if="{{item.status=='3'}}">{{item.comments}}</view>
+            <view class="state text-gray">
+               <view>开始时间:{{item.startDate}}</view>
+               <view>到期时间:{{item.expireDate}}</view>
+            </view>
+
+						<view class="state text-gray" wx:if="{{item.state=='0'&&item.status==0}}"> <text class="icon-remind "></text>已添加</view>
+						<view class="state text-gray" wx:elif="{{item.status=='1'}}"> <text class="icon-remind "></text>待审核</view>
+						<view class="state text-green" wx:elif="{{item.status=='2'&&item.state=='1'}}"> <text class="icon-remind "></text>已启用</view>
+						<view class="state text-gray" wx:elif="{{item.status=='2'&&item.state=='2'}}"> <text class="icon-remind "></text>已过期</view>
+						<view class="state text-red" wx:elif="{{item.state=='0'&&item.status=='3'}}"> <text class="icon-remind "></text>审核不通过</view>
+						<view class="state text-red" wx:else> <text class="icon-remind ">强制禁用</text></view>
+				</view>
+			</view>
+      <view class="handle-box">
+       <button class="cu-btn sm round line-orange" bindtap="auditDetail" data-id='{{item.id}}' wx:if="{{item.status!=1}}">审核详情</button>
+        <button class="cu-btn sm round line-red" bindtap="auditSubmit" data-id='{{item.id}}' wx:if="{{item.state==0&&item.status!=1}}">提交审核</button>
+        <button class="cu-btn sm round line-green" bindtap="editGoodsPage" data-id='{{item.id}}'>修改轮播图</button>
+       </view>
+		</view>
+	</block>
+</view>
+<view class='btn-box bg-white' bindtap='addBanner' data-id="">
+	<view class='edit-btn bg-gradual-orange'>
+		<text class='icon-roundadd lg text-white'></text>
+		<text>新增轮播图</text>
+	</view>
+</view>
