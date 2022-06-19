@@ -1,7 +1,7 @@
 var config = {
 
   domain: 'https://svr.chudshop.com/', //测试
-  //domain: 'http://192.168.10.4:6699/', //测试
+  domain: 'http://192.168.10.4:6090/', //测试
   //domain: 'http://192.168.0.111:6090/',
   //domain:'http://localhost:6699/',
   imgPath:"https://www.chudshop.com/image/",

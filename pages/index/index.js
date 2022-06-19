@@ -43,7 +43,9 @@ Page({
     app.post({
       url: 'stalls/class/list',
       method:"post",
-      data: {},
+      data: {
+        parentId:0
+      },
     })
       .then((res) => {
         if(res.code==0){
